@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+  <table>
+    <tr>
+      <td><h4>Amount</h4></td>
+      <td><h4>From Currency</h4></td>
+      <td><h4>To Currency</h4></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" id="sotien">
+      </td>
+      <td>
+        <select name="" id="from">
+          <option value="23000">VNĐ</option>
+          <option value="1"> USD</option>
+        </select>
+      </td>
+      <td>
+        <select name="" id="to">
+          <option value="1">USD</option>
+          <option value="23000">VNĐ</option>
+        </select>
+      </td>
+      <td>
+        <button onclick="convertMoney()">Convert</button>
+      </td>
+    </tr>
+  </table>
+  <p id="result"></p>
+  <script>
+    //function : ham
+    function convertMoney(){
+      let amount = +document.getElementById('sotien').value
+      let from= document.getElementById('from').value
+      let to = document.getElementById('to').value
+      let result = amount * to / from
+
+      document.getElementById('result').innerHTML = result
+    }
+  </script>
+</body>
+</html>
