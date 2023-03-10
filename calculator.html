@@ -1,10 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
+<h2>Caculator</h2>
+<table>
+    <td><input type="text" placeholder="Number 1" id="x"></td>
+    <td><input type="text" placeholder="Number 2" id="y"></td>
+    <td>
+        <button type="button" onclick="Add()" id="Addition">Additon(+)</button>
+    </td>
+    <td>
+        <button type="button" onclick="Sub()" id="Subtraction">Subtraction(-)</button>
+    </td>
+    <td>
+        <button type="button" onclick="Mul()" id="Multiplicatio(X)">Multiplicatio(X)</button>
+    </td>
+    <td>
+        <button type="button" onclick="Div()" id="Division">Division(/)</button>
+    </td>
+    </button>
+</table>
 
+<script>
+
+
+    function Add() {
+        let a = +document.getElementById('x').value
+        let b = +document.getElementById('y').value
+        let c = a + b
+        alert(c)
+    }
+
+    function Sub() {
+        let a = +document.getElementById('x').value
+        let b = +document.getElementById('y').value
+        let d = a - b
+        alert(d)
+
+    }
+
+    function Mul() {
+        let a = +document.getElementById('x').value
+        let b = +document.getElementById('y').value
+        let e = a * b
+        alert(e)
+
+    }
+
+    function Div() {
+        let a = +document.getElementById('x').value
+        let b = +document.getElementById('y').value
+        let f = a / b
+        alert(f)
+
+    }
+
+
+</script>
 </body>
 </html>
