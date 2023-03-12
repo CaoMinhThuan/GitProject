@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Work</title>
+</head>
+<body>
+
+
+<!--<h1>Bài 1</h1>-->
+<!--<h3>Kiểm tra mật độ dân số</h3>-->
+<!--<input type="text" placeholder="Số cư dân"  id="pop">-->
+<!--<input type="text" placeholder="Diện tích khu vực (km2)" id="are">-->
+<!--<button onclick="kiemtra()">Kiểm tra mật độ dân số </button>-->
+<!--<script>-->
+<!--    function kiemtra() {-->
+<!--        let danso = +document.getElementById('pop').value-->
+<!--        let dientich = +document.getElementById('are').value-->
+<!--        if(danso/dientich > 1000 ){-->
+<!--            alert ('Khu vực này quá đông đúc')-->
+<!--        }-->
+<!--        else alert('Khu vực này không quá đông đúc”')-->
+
+<!--    }-->
+<!--</script>-->
+
+
+<!--<h1> Bài 2</h1>-->
+<!--<h3>Bài toán tính tiền điện </h3>-->
+<!--<input type="text" placeholder="Nhập vào số điện" id="number">-->
+<!--<button onclick="tinhtiendien()" id="tinhtien">Tính tiền điện</button>-->
+<!--<script>-->
+<!--    function tinhtiendien() {-->
+<!--        let sodien = +document.getElementById('number').value-->
+<!--        let tinhtien = +document.getElementById('tinhtien').value-->
+
+<!--        if (sodien <= 50) {-->
+<!--            document.write(tinhtien = sodien * 1.678)-->
+<!--        } else if (sodien <= '100') {-->
+<!--            document.write(tinhtien = sodien * 1.734)-->
+<!--        } else if (sodien <= 200) {-->
+<!--            document.write(tinhtien = sodien * 2.014)-->
+<!--        } else if (sodien <= 300) {-->
+<!--            document.write(tinhtien = sodien * 2.536)-->
+<!--        } else if (sodien <= 400) {-->
+<!--            document.write(tinhten = sodien * 2.834)-->
+<!--        } else document.write(tinhtien = sodien * 2.927)-->
+
+
+<!--    }-->
+<!--</script>-->
+
+
+<h1>Bài 3 : Dự đoán tình duyên</h1>
+<input type="text" placeholder="Năm sinh của bạn nam" id="yearboy">
+<input type="text" placeholder="Năm sinh của bạn nữ" id="yearwomen">
+<button onclick="kiemtra()">Kiểm tra tình duyên</button>
+<script>
+    function kiemtra() {
+        let namsinh = +document.getElementById('yearboy').value
+        let nusinh = +document.getElementById('yearwomen').value
+        let nam = +2023 - namsinh
+        let nu = +2023 - nusinh
+
+    }
+
+
+</script>
+
+
+<!--<h1>Bài 4</h1>-->
+<!--<h3>Kiểm tra tam giác</h3>-->
+<!--<input type="text" placeholder="Độ dài cạnh thứ nhất " id="num1">-->
+<!--<input type="text" placeholder="Độ dài cạnh thứ hai " id="num2">-->
+<!--<input type="text" placeholder="Độ dài cạnh thứ ba " id="num3">-->
+<!--<button onclick="kiemtra()">Kiểm tra tam giác</button>-->
+<!--<script>-->
+
+<!--    function kiemtra() {-->
+<!--        let a = +document.getElementById('num1').value-->
+<!--        let b = +document.getElementById('num2').value-->
+<!--        let c = +document.getElementById('num3').value-->
+<!--        if (a + b > c && a + c > b && b + c > a) {-->
+<!--            if (a === b && b === c && a === c) {-->
+<!--                document.write('Đây là tam giác đều')-->
+<!--            } else if (a === b || a === c || a === c) {-->
+<!--                document.write('Đây là tam giác cân')-->
+<!--            } else if (a * a === b * b + c * c || a * a + b * b === c * c || b * b === a * a + c * c) {-->
+<!--                document.write('Đây là tam giác vuông')-->
+<!--            } else-->
+<!--                document.write('Đây là tam giác thường')-->
+<!--        } else-->
+<!--            document.write('Đây không phải là tam giác')-->
+
+<!--    }-->
+<!--</script>-->
+
+
+<!--<h4>Bài 5</h4>-->
+<!--<p>Giải phương trình ax^2+bx+c=0</p>-->
+<!--<input type="text" placeholder="Number a" id="numbera">-->
+<!--<input type="text" placeholder="Number b" id="numberb">-->
+<!--<input type="text" placeholder="Number c" id="numberc">-->
+<!--<button onclick="result()">Tìm nghiệm x</button>-->
+<!--<script>-->
+    function result() {
+        let a = +document.getElementById('numbera').value
+        let b = +document.getElementById('numberb').value
+        let c = +document.getElementById('numberc').value
+        let delta = b * b - 4 * a * c
+        if (a === 0) {
+            alert('Phương trình có nghiệm x =' + -b / c)
+        } else if (delta < 0) {
+            alert('Phương trình vô nghiệm')
+        } else if (delta === 0) {
+            alert('Phương trình có nghiệm kép x = ' + -b / (2 * a))
+        } else alert('Phương trình có 2 nghiệm là x =' + (-b + Math.sqrt(delta)) / (2 * a) + " "  +(-b - Math.sqrt(delta)) / (2 * a))
+    }
+<!--</script>-->
+
+</body>
+</html>
