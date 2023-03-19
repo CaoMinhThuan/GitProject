@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="arr"></p>
+<p id="result"></p>
+</body>
+</html>
+
+<h3>Bài 1 . Viết hàm loại bỏ các giá trị sai (falsey) khỏi một mảng, bao gồm: false, null, 0, “”, undefined và NaN.</h3>
+<script>
+
+    h3
+    const array = [1, '1', false, null, 0, "", undefined, NaN, 10, 12];
+    document.getElementById('arr').innerHTML = `Mảng ban đầu: [${array}]`;
+
+    function filter_arr(arr) {
+        let check_true;
+        let true_arr = [];
+        for (let i = 0; i < arr.length; i++) {
+            check_true = Boolean(arr[i]);
+            if (check_true === true) {
+                true_arr.push(arr[i]);
+            }
+        }
+        return true_arr;
+    }
+
+
+    document.getElementById('result').innerHTML = [${(filter_arr(array))}]`;
+    </script>
+
+<h3> Bài 2 .Viết hàm tìm kiếm phần tử lớn thứ hai trong một mảng.
+</h3>
+
+<p id="arr"></p>
+<p id="result"></p>
+<script>
+    const arr = [0, 1, 5, 8, -2, 4, 18, 1, 21];
+    document.getElementById("arr").innerHTML = `Mảng ban đầu: [${arr}]`;
+
+
+    function second_highest(array) {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array.length; j++) {
+                x = array[j];
+                if (array[j] < array[j + 1]) {
+                    array[j] = array[j + 1];
+                    array[j + 1] = x;
+                }
+            }
+        }
+        return array[1];
+    }
+
+    document.getElementById('result').innerHTML = ${second_highest(arr)}`;
+
+</script>
+
+
+<h3>Viết hàm đếm số lần xuất hiện của các phần tử trong một mảng và trả về một đối tượng với key là giá trị của phần tử
+    và value là số lần xuất hiện</h3>
+<p id="arr"></p>
+<p id="result"></p>
+<script>
+    const arr = [1, 2, 18, 1, 4, 3, 10, 4, 1, 18, 2, 2];
+    document.getElementById('arr').innerHTML = `Mảng ban đầu:[${arr}]`;
+
+    let new_arr = [];
+    for (let k = 0; k < arr.length; k++) {
+        if (new_arr.indexOf(arr[k]) === -1) {
+            new_arr.push(arr[k]);
+        }
+    }
+
+    for (let i = 0; i < new_arr.length; i++) {
+        x = new_arr[i];
+        let count = 0;
+        for (let j = 0; j < arr.length; j++) {
+            if (x === arr[j]) {
+                count += 1;
+            }
+        }
+        document.getElementById('result').innerHTML += `Key: ${x}, Value: ${count} <br>`;
+    }
+</script>
+
+
+<h3>Bài 4 .Viết hàm tìm kiếm phần tử duy nhất (không trùng) trong một mảng.
+</h3>
+
+<p id="arr"></p>
+<p id="result"></p>
+<script>
+    const arr = [1, 2, 3, 1, 4, 3, 10, 4, 1, 5, 10, 9];
+    document.getElementById('arr').innerHTML = `Mảng ban đầu:[${arr}]`;
+
+    let new_arr = [];
+    for (let k = 0; k < arr.length; k++) {
+        if (new_arr.indexOf(arr[k]) === -1) {
+            new_arr.push(arr[k]);
+        }
+    }
+
+    let different_count = 0;
+    let only_value = '';
+    let count;
+    for (let i = 0; i < new_arr.length; i++) {
+        x = new_arr[i];
+        count = 0;
+        for (let j = 0; j < arr.length; j++) {
+            if (x === arr[j]) {
+                count += 1;
+            }
+        }
+        if (count === 1) {
+            only_value += x + ",";
+            different_count += 1;
+        }
+    }
+    document.getElementById('result').innerHTML +=
+        `Có ${different_count} phần tử trong mảng chỉ xuất hiện 1 lần <br> Bao gồm các phần tử: ${only_value}`;
+</script>
+
+
+<h3>Bài 5 .Viết hàm tạo ra một mảng mới với giá trị của phần tử tương ứng trong hai mảng đầu vào đã cho được tổng
+    lại.</h3>
+
+<p id="arr"></p>
+<p id="result"></p>
+<script>
+    const arr_1 = [1, 9, 6, 10, 4];
+    const arr_2 = [9, 2, 0, 3, 1, 5, 8, 10];
+    document.getElementById('arr').innerHTML = `Mảng 1:[${arr_1}] <br> Mảng 2: [${arr_2}]`;
+
+    function sum_array(arr1, arr2) {
+        let max_length = Math.max(arr1.length, arr2.length);
+        let sum_arr = [];
+        let total = 0;
+        let value1, value2;
+        for (let i = 0; i < max_length; i++) {
+            value1 = arr1[i] || 0;
+            value2 = arr2[i] || 0;
+            total = value1 + value2;
+            sum_arr.push(total);
+        }
+        return sum_arr;
+    }
+
+    let result = sum_array(arr_1, arr_2);
+    document.getElementById('result').innerHTML = `Mảng mới: [${result}]`;
+</script>
