@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<h3>Bài 1 . Tìm giá trị lớn nhất của hàm số trong một khoảng cho trước. </h3>-->
+<!--<script>-->
+<!--    function f(x) {-->
+<!--        return -2 * x * x + 8 * x + 10;-->
+<!--    }-->
+<!--    function findMaxValueInInterval(func, a, b) {-->
+<!--        function derivative(x) {-->
+<!--            return (func(x + 0.0001) - func(x)) / 0.0001;-->
+<!--        }-->
+<!--        const criticalPoints = [a, b];-->
+<!--        const derivativeAtCriticalPoints = [derivative(a), derivative(b)];-->
+<!--        if (derivative(a) === 0) {-->
+<!--            criticalPoints.push(a);-->
+<!--            derivativeAtCriticalPoints.push(derivative(a));-->
+<!--        }-->
+<!--        if (derivative(b) === 0) {-->
+<!--            criticalPoints.push(b);-->
+<!--            derivativeAtCriticalPoints.push(derivative(b));-->
+<!--        }-->
+<!--        const len = criticalPoints.length;-->
+<!--        for (let i = 0; i < len; i++) {-->
+<!--            const x = criticalPoints[i];-->
+<!--            if (derivative(x - 0.001) < 0 && derivative(x + 0.001) > 0) {-->
+<!--                criticalPoints.push(x);-->
+<!--                derivativeAtCriticalPoints.push(derivative(x));-->
+<!--            }-->
+<!--        }-->
+<!--        let maxValue = func(a);-->
+<!--        for (let i = 0; i < criticalPoints.length; i++) {-->
+<!--            if (criticalPoints[i] > a && criticalPoints[i] < b) {-->
+<!--                const y = func(criticalPoints[i]);-->
+<!--                if (y > maxValue) {-->
+<!--                    maxValue = y;-->
+<!--                }-->
+<!--            }-->
+<!--        }-->
+<!--        if (func(b) > maxValue) {-->
+<!--            maxValue = func(b);-->
+<!--        }-->
+<!--        return maxValue;-->
+<!--    }-->
+<!--    const maxVal = findMaxValueInInterval(f, 1, 4);-->
+
+<!--</script>-->
+
+
+<!--<h3>Bài 2 . Tìm bộ ba số trong một mảng sao cho tổng của chúng bằng một giá trị cho trước.-->
+<!--</h3>-->
+<!--<script>-->
+<!--    function findTriplets(arr, sum) {-->
+<!--        const hashTable = {};-->
+<!--        const result = [];-->
+
+<!--        for (let i = 0; i < arr.length; i++) {-->
+<!--            const remainingSum = sum - arr[i];-->
+<!--            for (let j = i + 1; j < arr.length; j++) {-->
+<!--                const secondNum = remainingSum - arr[j];-->
+<!--                if (hashTable[secondNum]) {-->
+<!--                    result.push([arr[i], arr[j], secondNum]);-->
+<!--                }-->
+<!--            }-->
+<!--            hashTable[arr[i]] = true;-->
+<!--        }-->
+<!--        return result.length > 0 ? result : null;-->
+<!--    }-->
+<!--    const arr = [2, 3, 4, 6, 8, 9, 11];-->
+<!--    const sum = 17;-->
+<!--    const triplets = findTriplets(arr, sum);-->
+<!--    console.log(triplets);-->
+
+<!--</script>-->
+
+<!--<h3>Bài 3 . Tìm hai số trong một mảng sao cho tổng của chúng bằng một giá trị cho trước và có khoảng cách nhỏ nhất.</h3>-->
+<!--<script>-->
+<!--    function findClosestSum(arr, sum) {-->
+<!--        arr.sort((a, b) => a - b); // sắp xếp lại mảng theo thứ tự tăng dần-->
+<!--        let left = 0;-->
+<!--        let right = arr.length - 1;-->
+<!--        let closestSum = Infinity;-->
+<!--        const result = [];-->
+
+<!--        while (left < right) {-->
+<!--            const currentSum = arr[left] + arr[right];-->
+<!--            if (currentSum === sum) {-->
+<!--                result.push([arr[left], arr[right]]);-->
+<!--                left++;-->
+<!--                right&#45;&#45;;-->
+<!--            } else if (currentSum < sum) {-->
+<!--                if (sum - currentSum < closestSum) {-->
+<!--                    closestSum = sum - currentSum;-->
+<!--                    result.length = 0;-->
+<!--                    result.push([arr[left], arr[right]]);-->
+<!--                } else if (sum - currentSum === closestSum) {-->
+<!--                    result.push([arr[left], arr[right]]);-->
+<!--                }-->
+<!--                left++;-->
+<!--            } else {-->
+<!--                if (currentSum - sum < closestSum) {-->
+<!--                    closestSum = currentSum - sum;-->
+<!--                    result.length = 0;-->
+<!--                    result.push([arr[left], arr[right]]);-->
+<!--                } else if (currentSum - sum === closestSum) {-->
+<!--                    result.push([arr[left], arr[right]]);-->
+<!--                }-->
+<!--                right&#45;&#45;;-->
+<!--            }-->
+<!--        }-->
+<!--        return result;-->
+<!--    }-->
+<!--    const arr = [2, 4, 8, 5, 1, 9];-->
+<!--    const sum = 10;-->
+<!--    const closestSums = findClosestSum(arr, sum);-->
+<!--    console.log(closestSums);-->
+
+<!--</script>-->
+
+<!--<h3>Bài 4 . Tìm phần tử duy nhất đầu tiên trong một mảng</h3>-->
+<!--<script>-->
+<!--    function findFirstUniqueElement(arr) {-->
+<!--        for (let i = 0; i < arr.length; i++) {-->
+<!--            if (arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])) {-->
+<!--                return arr[i];-->
+<!--            }-->
+<!--        }-->
+<!--        return null;-->
+<!--    }-->
+<!--    const arr = [1, 2, 3, 4, 1, 2, 5];-->
+<!--    const uniqueElement = findFirstUniqueElement(arr);-->
+<!--    console.log(uniqueElement); // 3-->
+
+<!--</script>-->
+
+<!--<h3>Bài 5 . Cho 4 mảng số nguyên bất kỳ, tìm mảng có tổng lớn nhất-->
+<!--</h3>-->
+<!--<script>-->
+<!--    function findMaxSumArray(arr1, arr2, arr3, arr4) {-->
+<!--        let maxSum = -Infinity;-->
+<!--        let maxSumIndex = -1;-->
+<!--        const arrays = [arr1, arr2, arr3, arr4];-->
+<!--        for (let i = 0; i < arrays.length; i++) {-->
+<!--            let sum = 0;-->
+<!--            for (let j = 0; j < arrays[i].length; j++) {-->
+<!--                sum += arrays[i][j];-->
+<!--            }-->
+<!--            if (sum > maxSum) {-->
+<!--                maxSum = sum;-->
+<!--                maxSumIndex = i;-->
+<!--            }-->
+<!--        }-->
+<!--        return arrays[maxSumIndex];-->
+<!--    }-->
+<!--    const arr1 = [1, 2, 3];-->
+<!--    const arr2 = [4, 5, 6];-->
+<!--    const arr3 = [-1, 0, 1];-->
+<!--    const arr4 = [10, -5, 3];-->
+<!--    const maxSumArray = findMaxSumArray(arr1, arr2, arr3, arr4);-->
+<!--    console.log(maxSumArray);-->
+
+<!--</script>-->
+
+
+<h3>Bài 6  . Tìm phần tử lớn thứ k trong một mảng số nguyên</h3>
+<script>
+    function findKthLargestElement(arr, k) {
+        arr.sort((a, b) => b - a);
+        return arr[k - 1];
+    }
+
+    const arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+    const k = 4;
+    const kthLargestElement = findKthLargestElement(arr, k);
+    console.log(kthLargestElement);
+
+</script>
+</body>
+</html>

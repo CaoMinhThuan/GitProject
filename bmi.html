@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Tính chỉ số cân nặng của cơ thể</title>
 </head>
 <body>
-$END$
+<h3>Body mass index-BMI</h3>
+<input type="number" placeholder="Enter weight (kg )" min="0" id="weight">
+<input type="number" placeholder="Enter hight (m)" min="0" id="height">
+<button onclick="test()">Test BMI</button>
+<script>
+    let weight = +document.getElementById('weight').value
+    let height = +document.getElementById('height').value
+    let bmi = weight / (height ^ 2)
+
+    function test() {
+        if (bmi < 18.5) {
+            document.write('Underweight')
+        } else if (bmi < 25) {
+            document.write('Normal')
+        } else if (bmi < 30) {
+            document.write('Overweight')
+        } else document.write('Obese')
+    }
+</script>
+
 </body>
 </html>

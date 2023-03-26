@@ -1,10 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập cấu trúc điều kiện 02
+    </title>
 </head>
 <body>
-$END$
-</body>
-</html>
+<!--<h1>Bài 1: Chuyển từ độ C sang độ F.-->
+<!--</h1>-->
+<!--<input type="number" placeholder="input °C " id="°C">-->
+<!--<button onclick="Result()">Result</button>-->
+<!--<script>-->
+<!--    function Result() {-->
+<!--        let C = +document.getElementById('°C').value-->
+<!--        let F = C * 9 / 5 + 32-->
+<!--        document.write('Temperature °F is :' + F)-->
+<!--    }-->
+<!--</script>-->
+
+
+<!--<h1>Bài 2: Chuyển từ mét sang feet:-->
+<!--</h1>-->
+<!--<input type="number" min="0" placeholder="Input number m" id="met">-->
+<!--<button onclick="result()">Result</button>-->
+<!--<script>-->
+<!--    function result() {-->
+<!--        let met = +document.getElementById('met').value-->
+<!--        let feet = met * 3.2808-->
+<!--        document.write('Number feet = ' + feet)-->
+<!--    }-->
+<!--</script>-->
+
+
+<!--<h1>Bài 3: Tính diện tích hình vuông khi biết cạnh a.-->
+<!--</h1>-->
+<!--<input type="number" min="0" placeholder="Input number a" id="a">-->
+<!--<button onclick="result()">Result</button>-->
+<!--<script>-->
+<!--    function result() {-->
+<!--        let a = +document.getElementById('a').value-->
+<!--        let area = a * a-->
+<!--        document.write('Area square =' + area)-->
+<!--    }-->
+<!--</script>-->
+
+
+<!--<h1>Bài 4: Tính diện tích hình chữ nhật khi biết 02 cạnh a, b.-->
+<!--</h1>-->
+<!--<input type="number" min="0" placeholder="Number a" id="a">-->
+<!--<input type="number" min="0" placeholder="Number b" id="b">-->
+<!--<button onclick="result()">Result</button>-->
+<!--<script>-->
+<!--    function result() {-->
+<!--        let a = +document.getElementById('a').value-->
+<!--        let b = +document.getElementById('b').value-->
+<!--        let area = a * b-->
+<!--        document.write('Area rectangle = ' + area)-->
+<!--    }-->
+<!--</script>-->
+
+
+<!--<h1>Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.-->
+<!--</h1>-->
+<!--<input type="number" min="0" placeholder="Number a" id="a">-->
+<!--<input type="number" min="0" placeholder="Number b" id="b">-->
+<!--<button onclick="result()">Result</button>-->
+<!--<script>-->
+<!--    function result() {-->
+<!--        let a = +document.getElementById('a').value-->
+<!--        let b = +document.getElementById('b').value-->
+<!--        let area = a * b / 2-->
+<!--        document.write('Area right triangle =' + area)-->
+<!--    }-->
+<!--</script>-->
+
+
+<!--<h1>Bài 6: Giải phương trình bậc 1 : ax + b = 0-->
+<!--</h1>-->
+<!--<input type="number" placeholder="Number a" id="numbera">-->
+<!--<input type="number" placeholder="Number b" id="numberb">-->
+<!--<button onclick="result()">Result</button>-->
+<!--<script>-->
+<!--    function result() {-->
+<!--        let numbera = +document.getElementById('numbera').value-->
+<!--        let numberb = +document.getElementById('numberb').value-->
+<!--        if (numbera == 0) {-->
+<!--            document.write('The equation has no solution')-->
+<!--        } else document.write('The equation has solution = ' + -numberb / numbera)-->
+<!--    }-->
+<!--</script>-->
+
+
+<!--<h1>Bài 7: Giải phương trình bậc 2 : ax2+bx+c=0-->
+<!--</h1>-->
+<!--<input type="number" placeholder="Number a" id="numbera">-->
+<!--<input type="number" placeholder="Number b" id="numberb">-->
+<!--<input type="number" placeholder="Number c" id="numberc">-->
+<!--<button onclick="result()">Result</button>-->
+<!--<script>-->
+<!--    function result() {-->
+<!--        let numbera = +document.getElementById('numbera').value-->
+<!--        let numberb = +document.getElementById('numberb').value-->
+<!--        let numberc = +document.getElementById('numberc').value-->
+<!--        let delta = (numberb * numberb - 4 * numbera * numberc) / 2-->
+<!--        if (numbera == 0 && numberb == 0) {-->
+<!--            document.write('The equation has no solution')-->
+
+<!--        } else if (numbera == 0 && numberb != 0) {-->
+<!--            document.write('The equation has solution = ' + -numberb / numbera)-->
+<!--        } else document.write('The equation has 2 solution =' + (-numberb + Math.sqrt(delta)) / (2 * numbera) + " " + (-numberb - Math.sqrt(delta)) / (2 * numbera))-->
+
+
+<!--    }-->
+
+
+<!--</script>-->
+
+
+<!--<h1>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ-->
+<!--    120 và lơn hơn 0.-->
+<!--</h1>-->
+<!--<input type="number" placeholder="Input number" id="number">-->
+<!--<button onclick="check()">Check</button>-->
+<!--<script>-->
+<!--    function check() {-->
+<!--        let age = +document.getElementById('number').value-->
+<!--        if (0 < age && age < 120) {-->
+<!--            document.write('This is the age of a person')-->
+<!--        } else document.write('This is not a person age')-->
+
+<!--    }-->
+<!--</script>-->
+
+
+<!--<h1>Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một-->
+<!--    tam giác là:-->
+<!--</h1>-->
+<!--<input type="number" placeholder="Number a" id="numbera">-->
+<!--<input type="number" placeholder="Number b" id="numberb">-->
+<!--<input type="number" placeholder="Number c" id="numberc">-->
+<!--<button onclick="check()">Check</button>-->
+<!--<script>-->
+<!--    function check() {-->
+<!--        let numbera = +document.getElementById('numbera').value-->
+<!--        let numberb = +document.getElementById('numberb').value-->
+<!--        let numberc = +document.getElementById('numberc').value-->
+<!--        if (numbera > 0 && numberb > 0 && numberc > 0 && numbera + numberb > numberc && numberb + numberc > numbera && numbera + numberc > numberb) {-->
+<!--            document.write('This is a triangle')-->
+
+<!--        } else document.write('This is not a triangle')-->
+
+<!--    }-->
+<!--</script>-->
+
+
+<!--<h1>Bài 10: Viết chương trình tính giá điện.-->
+<!--</h1>-->
+<!--<input type="number" min="0" placeholder="Enter Electric number" id="number">-->
+<!--<button onclick="result()">Electricity bill-->
+<!--</button>-->
+
+<!--<script>-->
+<!--    function result() {-->
+<!--        let number = +document.getElementById('number').value-->
+<!--        if (number > 500) {-->
+<!--            document.write('Electricity bill = ' + number * 2)-->
+<!--        } else if (number > 400) {-->
+<!--            document.write('Electricity bill = ' + number * 1.8)-->
+<!--        } else if (number > 300) {-->
+<!--            document.write('Electricity bill = ' + number * 1.6)-->
+<!--        } else if (number > 200) {-->
+<!--            document.write('Electricity bill = ' + number * 1.4)-->
+<!--        } else document.write('Electricity bill = ' + number * 1.2)-->
+<!--        -->
+
+<!--    }-->
+
+<!--</script>-->
+
+
+<!--<h1>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi-->
+<!--    xuất hàng tháng.-->
+<!--</h1>-->
+<!--<input type="number" min="0" placeholder="Amount of money" id="money">-->
+<!--<input type="number" min="0" placeholder="Amount of month" id="month">-->
+<!--<input type="number" min="0" placeholder="Interest rate" id="Interest rate">-->
+<!--<button onclick="amount()">Amount received</button>-->
+<!--<script>-->
+<!--    function amount() {-->
+<!--        let money = +document.getElementById('money').value-->
+<!--        let month = +document.getElementById('month').value-->
+<!--        let rate = +document.getElementById('Interest rate').value-->
+<!--        let amount = money * Math.pow(1 + month, rate)-->
+<!--        document.write('the amount received is' + amount)-->
+<!--    }-->
+<!--</script>-->
+
+
+<!--</body>-->
+<!--</html>-->

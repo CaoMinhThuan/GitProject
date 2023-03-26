@@ -1,10 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Sự kiện bàn phím</title>
 </head>
 <body>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUsCOEs3TPQ5AyjOADQvRxoL5a2iIcOrJchQ&usqp=CAU"
+     style="width: 300px" id="img" alt="">
+<script>
+    let img = document.getElementById('img')
+    window.onload = init
 
+    function init() {
+        img.style.left = '0'
+        img.style.position = 'relative'
+
+    }
+
+    function upArrowPressed() {
+        img.style.top = parseInt(img.style.top) - 10 + 'px'
+    }
+
+    function downArrowPressed() {
+        img.style.bottom = parseInt(img.style.bottom) + 10 + 'px'
+    }
+
+    function leftArrowPressed() {
+        img.style.left = parseInt(img.style.left) - 10 + 'px'
+    }
+
+    function rightArrowPressed() {
+        img.style.right = parseInt(img.style.right) + 10 + 'px'
+    }
+
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftArrowPressed(evt.keyCode);
+                break;
+            case 39:
+                rightArrowPressed(evt.keyCode);
+                break;
+            case 38:
+                upArrowPressed(evt.keyCode);
+                break;
+            case 40:
+                downArrowPressed(evt.keyCode);
+                break;
+
+        }
+    }
+
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+
+</script>
 </body>
 </html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<!--<h3>[Thực hành] Xây dựng lớp Date</h3>-->
+<!--<script>-->
+<!--    class Date {-->
+<!--        day;-->
+<!--        month;-->
+<!--        year;-->
+
+<!--        constructor(day, month, year) {-->
+<!--            this.day = day-->
+<!--            this.month = month-->
+<!--            this.year = year-->
+<!--        }-->
+
+<!--        getDay() {-->
+<!--            return this.day-->
+<!--        }-->
+
+<!--        getMonth() {-->
+<!--            return this.month-->
+<!--        }-->
+
+<!--        getYear() {-->
+<!--            return this.year-->
+<!--        }-->
+
+<!--        setDay(day) {-->
+<!--            return this.day = day-->
+<!--        }-->
+
+<!--        setDate(day, month, year) {-->
+<!--            this.day = day;-->
+<!--            this.month = month;-->
+<!--            this.year = year;-->
+<!--        }-->
+
+<!--        setMonth(month) {-->
+<!--            return this.month = month-->
+<!--        }-->
+
+<!--        setYear(year) {-->
+<!--            return this.year = year-->
+<!--        }-->
+
+<!--        toString() {-->
+<!--            return `${this.day}/${this.month}/${this.year}`-->
+<!--        }-->
+<!--    }-->
+
+<!--    let newdate = new Date(22, 3, 2023)-->
+<!--    newdate.setDate(25, 3, 2023)-->
+<!--    alert(newdate-->
+<!--    )-->
+
+<!--</script>-->
+
+<!--<h3>[Thực hành] Xây dựng lớp Hình Tròn</h3>-->
+
+<!--<script>-->
+<!--    class Circle {-->
+<!--        radius;-->
+<!--        area;-->
+
+<!--        constructor(radius) {-->
+<!--            this.radius = radius-->
+<!--            this.area = Math.PI * this.radius * this.radius;-->
+<!--        }-->
+
+<!--        getRadius() {-->
+<!--            return this.radius-->
+<!--        }-->
+
+<!--        setRadius(radius) {-->
+<!--            return this.radius = radius-->
+<!--        }-->
+
+<!--        setCircle(radius) {-->
+<!--            this.radius = radius-->
+
+<!--        }-->
+<!--    }-->
+
+<!--    let newCircle = new Circle(2)-->
+<!--    console.log(newCircle)-->
+<!--</script>-->
+
+
+<!--<h3>Circle with Canvas</h3>-->
+<!--<canvas id="canvas" width="800px" height="600px" style="border: 3px solid blue">-->
+<!--    <script>-->
+<!--        class Circle {-->
+<!--            x;-->
+<!--            y;-->
+<!--            radius;-->
+
+<!--            constructor(x, y, radius) {-->
+<!--                this.x = x-->
+<!--                this.y = y-->
+<!--                this.radius = radius-->
+<!--            }-->
+
+<!--            setX(x) {-->
+<!--                return this.x = x-->
+<!--            }-->
+
+<!--            setY(y) {-->
+<!--                return this.y = y-->
+<!--            }-->
+
+<!--            setRadius(radius) {-->
+<!--                return this.radius = radius-->
+<!--            }-->
+
+<!--            setCircle(x, y, radius) {-->
+<!--                this.x = x-->
+<!--                this.y = y-->
+<!--                this.radius = radius-->
+
+<!--            }-->
+
+<!--            randomColor() {-->
+<!--                let red = Math.random() * 255-->
+<!--                let green = Math.random() * 255-->
+<!--                let blue = Math.random() * 255-->
+<!--                return (`rgb(${red}, ${green} , ${blue})`)-->
+<!--            }-->
+
+<!--            drawCircle() {-->
+<!--                let canvas = document.getElementById('canvas')-->
+<!--                let ctx = canvas.getContext('2d')-->
+<!--                ctx.beginPath()-->
+<!--                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)-->
+<!--                ctx.fillStyle = this.randomColor()-->
+<!--                ctx.fill()-->
+<!--                ctx.closePath()-->
+<!--            }-->
+<!--        }-->
+
+<!--        let newCircle = new Circle(300, 300, 30)-->
+<!--        newCircle.drawCircle()-->
+<!--    </script>-->
+
+<!--</canvas>-->
+
+
+<!--<h3>Rectangle with canvas</h3>-->
+<!--<canvas id="canvas" width="900px" height="600px" style="border: 3px blue">-->
+<!--    <script>-->
+<!--        class Rectangle {-->
+<!--            x = Math.random() * 500-->
+<!--            y = Math.random() * 500-->
+<!--            width = Math.random() * 50-->
+<!--            height = Math.random() * 50-->
+
+<!--            constructor() {-->
+<!--            }-->
+
+<!--            randomColor() {-->
+<!--                let red = Math.random() * 255-->
+<!--                let green = Math.random() * 255-->
+<!--                let blue = Math.random() * 255-->
+<!--                return (`rgb(${red},${green},${blue})`)-->
+
+<!--            }-->
+
+<!--            drawRectangle() {-->
+<!--                let canvas = document.getElementById('canvas')-->
+<!--                let ctx = canvas.getContext('2d')-->
+<!--                ctx.beginPath()-->
+<!--                ctx.rect(Math.random() * this.x, Math.random() * this.y, Math.random() * this.width, Math.random() * this.height)-->
+<!--                ctx.fillStyle = this.randomColor()-->
+<!--                ctx.fill()-->
+<!--                ctx.closePath()-->
+<!--            }-->
+
+
+<!--        }-->
+
+<!--        let newRectangle = new Rectangle()-->
+<!--        for (let i = 0; i < 20; i++) {-->
+<!--            newRectangle.drawRectangle()-->
+
+<!--        }-->
+<!--    </script>-->
+
+<!--</canvas>-->
+<!--<h3>[Bài tập] Xây dựng lớp mô tả nhiệt độ</h3>-->
+<!--<script>-->
+<!--    class Tem {-->
+<!--        c;-->
+<!--        f;-->
+<!--        k;-->
+
+<!--        constructor(c) {-->
+<!--            this.c = c-->
+<!--        }-->
+
+<!--        setC(c) {-->
+<!--            this.c = c-->
+<!--        }-->
+
+<!--        covertToF() {-->
+<!--            this.f = this.c * 1.8 + 32-->
+<!--            document.write(this.f)-->
+<!--        }-->
+
+<!--        convertToK() {-->
+<!--            this.k = this.c + 273.15-->
+<!--            document.write(this.k)-->
+<!--        }-->
+
+<!--    }-->
+
+<!--    let newTemp = new Tem(25)-->
+<!--    newTemp.covertToF()-->
+<!--    document.write('<br>')-->
+<!--    newTemp.convertToK()-->
+
+<!--</script>-->
+
+<script>
+     
+</script>
+
+</body>
+</html>

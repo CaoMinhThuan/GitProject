@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        battery;
+        status;
+        massage;
+        inbox;
+        outbox;
+
+        constructor() {
+            this.battery = 100
+            this.status = false
+            this.massage = ""
+            this.inbox = []
+            this.outbox = []
+        }
+
+        checkStatus() {
+            return this.status
+        }
+
+        writeMassage(text) {
+            this.massage = text
+            this.giamBatterty()
+        }
+
+        giamBatterty() {
+            this.battery--
+        }
+
+        turnOn() {
+            this.status = true
+            this.giamBatterty()
+        }
+
+        tunrOff() {
+            this.status = false
+        }
+
+        changeBattery() {
+            this.battery += 1
+        }
+
+        sendMesaage(phone) {
+            this.outbox.push(this.massage)
+            phone.inbox.push(this.massage)
+            this.giamBatterty()
+        }
+
+        getInbox() {
+            this.giamBatterty()
+            return this.inbox
+
+        }
+
+        getOutbox() {
+            this.giamBatterty()
+            return this.outbox
+        }
+    }
+
+    let samsung = new Mobile()
+    let iphone = new Mobile()
+    samsung.turnOn()
+    samsung.writeMassage("hello")
+    samsung.sendMesaage(iphone)
+    iphone.turnOn()
+    iphone.getInbox()
+    console.log(iphone.getInbox())
+    iphone.writeMassage('hi')
+    iphone.sendMesaage(samsung)
+    samsung.getInbox()
+    console.log(samsung.getInbox())
+
+
+</script>
+</body>
+</html>

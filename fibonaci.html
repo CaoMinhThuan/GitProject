@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+
+    let a = 1
+    let b = 1
+    document.write(a + '<br>')
+    document.write(b + '<br>')
+    let temp
+    for (let i = 0; i < 18; i++) {
+        temp = a + b
+        a = b
+        b = temp
+        document.write(temp + '<br>')
+
+    }
+
+</script>
 </body>
 </html>
