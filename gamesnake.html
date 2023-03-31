@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Game rắn săn mồi</title>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400" style="border: 3px solid blueviolet" ></canvas>
+<script>
+    // Khởi tạo canvas và context
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // Khởi tạo rắn
+    let snake = [
+        {x: 10, y: 10},
+        {x: 9, y: 10},
+        {x: 8, y: 10},
+        {x: 7, y: 10}
+    ];
+
+    // Khởi thức ăn
+    let food = {x: 15, y: 15};
+    // Khởi tạo điểm
+    let score = 0;
+
+    // Vẽ rắn
+    function drawSnake() {
+        ctx.fillStyle = "blue";
+        for (let i = 0; i < snake.length; i++) {
+            ctx.fillRect(snake[i].x * 10, snake[i].y * 10, 10, 10);
+        }
+    }
+
+    // Vẽ thức ăn
+    function drawFood() {
+        ctx.fillStyle = "green";
+        ctx.fillRect(food.x * 10, food.y * 10, 10, 10);
+    }
+
+    // Di chuyển rắn
+    function moveSnake() {
+        // Xóa đuôi
+        snake.pop();
+        // Thêm đầu
+        let head = {x: snake[0].x, y: snake[0].y};
+        switch (direction) {
+            case "left":
+                head.x--;
+                break;
+            case "up":
+                head.y--;
+                break;
+            case "right":
+                head.x++;
+                break;
+            case "down":
+                head.y++;
+                break;
+        }
+        snake.unshift(head);
+    }
+
+    // Kiểm tra va chạm
+    function checkCollision() {
+        // Kiểm tra va chạm tường
+        if (snake[0].x < 0 || snake[0].x > 39 || snake[0].y < 0 || snake[0].y > 39) {
+            return true;
+        }
+        // Kiểm tra va chạm thân rắn
+        for (let i = 1; i < snake.length; i++) {
+            if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Cập nhật trạng thái game
+    function update() {
+        moveSnake();
+        if (snake[0].x === food.x && snake[0].y === food.y) {
+            // Ăn mồi
+            food.x = Math.floor(Math.random() * 40);
+            food.y = Math.floor(Math.random() * 40);
+            snake.push(snake[snake.length - 1]);
+            score++;
+        }
+        if (checkCollision()) {
+            // Kết thúc game
+            clearInterval(intervalId);
+            alert("Bạn đã thua!");
+        }
+    }
+
+    // Vẽ lại m
+    // Xử lý sự kiện phím bấm
+    let direction = "right";
+    document.addEventListener("keydown", function (event) {
+        switch (event.keyCode) {
+            case 37: // left arrow
+                if (direction !== "right") {
+                    direction = "left";
+                }
+                break;
+            case 38: // up arrow
+                if (direction !== "down") {
+                    direction = "up";
+                }
+                break;
+            case 39: // right arrow
+                if (direction !== "left") {
+                    direction = "right";
+                }
+                break;
+            case 40: // down arrow
+                if (direction !== "up") {
+                    direction = "down";
+                }
+                break;
+        }
+    });
+
+    // Vẽ lại màn hình
+    function redraw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawSnake();
+        drawFood();
+    }
+
+    // Bắt đầu game
+    const intervalId = setInterval(function () {
+        update();
+        redraw();
+    }, 100);
+
+</script>
+</body>
+</html>
