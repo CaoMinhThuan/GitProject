@@ -2,29 +2,27 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Game rắn săn mồi</title>
+    <title>Snake Game</title>
 </head>
 <body>
-<canvas id="canvas" width="400" height="400" style="border: 3px solid blueviolet" ></canvas>
+<canvas id="canvas" width="400" height="400" style="border: 5px solid yellowgreen"></canvas>
 <script>
     // Khởi tạo canvas và context
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
 
-    // Khởi tạo rắn
+    // Khởi tạo mảng rắn rắn
     let snake = [
         {x: 10, y: 10},
         {x: 9, y: 10},
-        {x: 8, y: 10},
-        {x: 7, y: 10}
-    ];
+    ];  // Mảng rắn với 2 đối tượng có 2 thuộc tính là tọa độ x , y
 
-    // Khởi thức ăn
+    // Khởi tạo đối tượng thức ăn , có 2 thuộc tính tọa độ x, y
     let food = {x: 15, y: 15};
-    // Khởi tạo điểm
+
     let score = 0;
 
-    // Vẽ rắn
+    // Hàm vẽ rắn
     function drawSnake() {
         ctx.fillStyle = "blue";
         for (let i = 0; i < snake.length; i++) {
@@ -32,19 +30,19 @@
         }
     }
 
-    // Vẽ thức ăn
+    // Hàm vẽ thức ăn
     function drawFood() {
-        ctx.fillStyle = "green";
+        ctx.fillStyle = "black";
         ctx.fillRect(food.x * 10, food.y * 10, 10, 10);
     }
 
-    // Di chuyển rắn
+    // Hàm di chuyển rắn
     function moveSnake() {
         // Xóa đuôi
         snake.pop();
         // Thêm đầu
         let head = {x: snake[0].x, y: snake[0].y};
-        switch (direction) {
+        switch (direction) {  //Sử dụng câu lệnh switch để xác định hướng di chuyển của con rắn
             case "left":
                 head.x--;
                 break;
@@ -61,40 +59,47 @@
         snake.unshift(head);
     }
 
-    // Kiểm tra va chạm
+    // Hàm kiểm tra va chạm
     function checkCollision() {
         // Kiểm tra va chạm tường
         if (snake[0].x < 0 || snake[0].x > 39 || snake[0].y < 0 || snake[0].y > 39) {
-            return true;
+            return true;  //Nếu tọa độ x hoặc y của đầu rắn vượt ra khỏi phạm vi của canvas (lớn hơn 39 hoặc nhỏ hơn 0), thì trả về giá trị true, tức là va chạm.
         }
         // Kiểm tra va chạm thân rắn
         for (let i = 1; i < snake.length; i++) {
             if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
-                return true;
+                return true; //kiểm tra xem tọa độ x và y của đầu rắn có bằng với tọa độ x và y của bất kỳ phần tử thân rắn nào hay không
             }
         }
         return false;
     }
 
-    // Cập nhật trạng thái game
+    // Hàm ăn thức ăn
+    function eatFood() {
+        ctx.font = "15px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText("Score: " + score, 10, 20);
+    }
+
+    // Hàm cập nhật trạng thái game
+
     function update() {
-        moveSnake();
-        if (snake[0].x === food.x && snake[0].y === food.y) {
+        moveSnake();   //Gọi hàm MoveSnake() để di chuyển rắn
+        if (snake[0].x === food.x && snake[0].y === food.y) { //Nếu tọa độ x,y của đầu rắn và mồi trùng nhau
             // Ăn mồi
-            food.x = Math.floor(Math.random() * 40);
+            food.x = Math.floor(Math.random() * 40); //Tạo tọa  độ mới cho snake và food
             food.y = Math.floor(Math.random() * 40);
-            snake.push(snake[snake.length - 1]);
-            score++;
+            snake.push(snake[snake.length - 1]); // Thêm một khối rắn vào cuối danh sách
+            score += 1;
         }
-        if (checkCollision()) {
-            // Kết thúc game
-            clearInterval(intervalId);
+        if (checkCollision()) { // Nếu xảy ra va chạ
+            clearInterval(intervalId); //Dừng hàm sêtInterval() để dừng trò chơi
             alert("Bạn đã thua!");
+
         }
     }
 
-    // Vẽ lại m
-    // Xử lý sự kiện phím bấm
+
     let direction = "right";
     document.addEventListener("keydown", function (event) {
         switch (event.keyCode) {
@@ -121,19 +126,19 @@
         }
     });
 
-    // Vẽ lại màn hình
+
     function redraw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawSnake();
         drawFood();
     }
 
-    // Bắt đầu game
+
     const intervalId = setInterval(function () {
         update();
         redraw();
+        eatFood();
     }, 100);
-
 </script>
 </body>
 </html>

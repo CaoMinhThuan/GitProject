@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    //  let user = {
+    //      name : 'David',
+    //      surname : 'Xuan',
+    //      replace(){
+    //          user.name = 'Cafedev'
+    //
+    //      },
+    //      del(){
+    //          delete user.name
+    //      }
+    //  }
+    //     // user.replace()
+    //     // console.log(user.name)
+    // user.del()
+    //     console.log(user)
+
+    // 'Bai 2 .Viết hàm isEmpty (obj) trả về true nếu đối tượng không có thuộc tính, ngược lại là false.'
+    // function isEmpty (obj){
+    //     if(Object.keys(obj).length === 0){
+    //         return true
+    //     } else {return false}
+    // }
+    // let schedule = {};
+    // console.log(isEmpty(schedule))
+
+
+
+    // let salaries = {
+    //     John: 100,
+    //     Ann: 160,
+    //     Pete: 130
+    // }
+    // let sum = salaries.John + salaries.Ann + salaries.Pete
+
+
+    'Bai 4 .Tạo một hàm multiplyNumeric(obj) nhân tất cả các thuộc tính số của obj với 2.'
+
+    let menu = {
+        width: 200,
+        height: 300,
+        title: "My menu cafedev"
+    };
+    function multiplyNumeric(obj) {
+        for (let prop in obj) {
+            if (!isNaN(obj[prop]) === true) {
+                console.log(obj[prop] * 2)
+            } else {
+                return 'day khong phai la gia tri so'
+            }
+        }
+    }
+
+    console.log(multiplyNumeric(menu))
+
+
+
+</script>
+</body>
+</html>
